@@ -14,9 +14,6 @@ styleLoader.pitch = function (remainingRequests) {
     document.head.appendChild(style)
   `
   return str
-  // const str = `require(${loaderUtils.stringifyRequest(this,'!!',x)})`
-  // console.log(str)
-  // return `module.exports = ${str}`
 }
 
 module.exports = styleLoader
