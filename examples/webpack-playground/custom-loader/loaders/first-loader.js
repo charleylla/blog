@@ -1,11 +1,9 @@
-function firstLoader(source){
-  console.log('first loader')
-  return source
+function asyncLoader(source){
+  const callback = this.async()
+  setTimeout(() => {
+    console.log('异步操作完成')
+    callback(null,source)
+  },500)
 }
 
-// 先执行 pitch，再执行 loader
-firstLoader.pitch = function(){
-  console.log('first loader pitch')
-}
-
-module.exports = firstLoader
+module.exports = asyncLoader

@@ -1,10 +1,9 @@
 const loaderUtils = require('loader-utils')
 
-// source 就是资源路径
 function fileLoader(source){
   const options = loaderUtils.getOptions(this)
   const { outputPath } = options
-  // 生成 MD5 文件
+  // 匹配路径，并打上 MD5 戳
   const filename = loaderUtils.interpolateName(this,outputPath + '/[contenthash].[ext]',{
     content:source
   })
@@ -15,7 +14,8 @@ function fileLoader(source){
   // 先将图片发射到目标文件夹，然后返回一个 js 模块
   return `module.exports = '${filename}'`
 }
-// 需要开启二进制，否则无法正常使用
+
+// 在处理二进制资源时，需要开启 raw 选项
 fileLoader.raw = true
 
 module.exports = fileLoader

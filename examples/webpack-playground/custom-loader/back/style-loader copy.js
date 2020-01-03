@@ -1,5 +1,8 @@
 const loaderUtils = require('loader-utils')
-// styleLoader 本身不作处理
+// 如果按照顺序调用，source 是一个 module.exports 的 js 脚本
+// 然后我们需要将这段脚本中的 css 提取出来插入到 style 中
+// 我们是无法直接将 module.exports 这样的代码转换为 css 的
+// 或许可以使用 eval
 function styleLoader() { }
 
 styleLoader.pitch = function (remainingRequests) {
@@ -21,7 +24,5 @@ styleLoader.pitch = function (remainingRequests) {
   `
   return str
 }
-
-styleLoader.raw = true
 
 module.exports = styleLoader

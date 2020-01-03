@@ -1,4 +1,3 @@
-const loaderUtils = require('loader-utils')
 function styleLoader(source){
   // less loader 将 less 转换为 css
   // style loader 将 css 插入到 style 标签中

@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-let _css = "body {\n  background-color: blue;\n}\nimg {\n  width: 100px;\n  height: 100px;\n}\n#app {\n  width: 200px;\n  height: 200px;\n  background: url("+__webpack_require__(/*! ./keyboard.png */ "./src/keyboard.png")+") no-repeat center center;\n}\n#app2 {\n  width: 200px;\n  height: 200px;\n  background: url("+__webpack_require__(/*! ./keyboard2.png */ "./src/keyboard2.png")+") no-repeat center center;\n}\n"; module.exports = _css
+eval("let _css = \"body {\\n  background-color: blue;\\n}\\nimg {\\n  width: 100px;\\n  height: 100px;\\n}\\n#app {\\n  width: 200px;\\n  height: 200px;\\n  background: url(\"+__webpack_require__(/*! ./keyboard.png */ \"./src/keyboard.png\")+\") no-repeat center center;\\n}\\n\"; module.exports = _css\n\n//# sourceURL=webpack:///./src/style.less?./loaders/css-loader.js!./loaders/less-loader.js");
 
 /***/ }),
 
@@ -101,20 +101,11 @@ let _css = "body {\n  background-color: blue;\n}\nimg {\n  width: 100px;\n  heig
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _keyboard_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./keyboard.png */ "./src/keyboard.png");
-/* harmony import */ var _keyboard_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_keyboard_png__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.less */ "./src/style.less");
-/* harmony import */ var _style_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_less__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const imgEle = document.createElement('img')
-imgEle.src = _keyboard_png__WEBPACK_IMPORTED_MODULE_0___default.a
-document.body.appendChild(imgEle)
+eval("\n\n__webpack_require__(/*! ./style.less */ \"./src/style.less\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -125,18 +116,7 @@ document.body.appendChild(imgEle)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = 'img/20bde7975f88504055e1e945c5ddb008.png'
-
-/***/ }),
-
-/***/ "./src/keyboard2.png":
-/*!***************************!*\
-  !*** ./src/keyboard2.png ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = 'img/20bde7975f88504055e1e945c5ddb008.png'
+eval("module.exports = 'img/20bde7975f88504055e1e945c5ddb008.png'\n\n//# sourceURL=webpack:///./src/keyboard.png?");
 
 /***/ }),
 
@@ -147,13 +127,8 @@ module.exports = 'img/20bde7975f88504055e1e945c5ddb008.png'
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-    const style = document.createElement('style')
-    style.innerHTML = __webpack_require__(/*! !../loaders/css-loader.js!../loaders/less-loader.js!./style.less */ "./loaders/css-loader.js!./loaders/less-loader.js!./src/style.less")
-    document.head.appendChild(style)
-  
+eval("\n    const style = document.createElement('style')\n    style.innerHTML = __webpack_require__(/*! !../loaders/css-loader.js!../loaders/less-loader.js!./style.less */ \"./loaders/css-loader.js!./loaders/less-loader.js!./src/style.less\")\n    document.head.appendChild(style)\n  \n\n//# sourceURL=webpack:///./src/style.less?");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.js.map
