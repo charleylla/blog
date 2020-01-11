@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>Welcome</p>
+  <a class='router-link' href='/home'>Home</a>
+  <a class='router-link' href='/about'>About</a>
+  <div id='router-view'></div>
+  <script>
+    const routerView = document.querySelector('#router-view');
+    const routerLinks = document.querySelectorAll('.router-link');
+
+    // 通过 pushstate 添加历史记录堆栈
+    [...routerLinks].forEach(link => {
+      link.addEventListener('click',(e) => {
+        e.preventDefault()
+        const href = e.target.getAttribute('href');
+        history.pushState({},null,href)
+        renderRoutes()
+      })
+    })
+
+    // 当活动历史记录条目更改时，将触发popstate事件
+    window.addEventListener('popstate',() => {
+      renderRoutes()
+    })
+
+    function renderRoutes(){
+      const { pathname } = location
+      routerView.innerHTML = `${pathname} 页面`
+    }
+  </script>
+</body>
+</html>
