@@ -6,7 +6,7 @@
     </div>
     <router-view></router-view>
     <button @click="goToHome">Go To Home</button>
-    <button @click="goToAbout">Go To Aboutt</button>
+    <button @click="goToAbout">Go To About</button>
   </div>
 </template>
 

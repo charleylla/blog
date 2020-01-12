@@ -1,13 +1,6 @@
 import RouterHistory from "./router-history";
 
-/**
- * 1. VueRouter 的 classs
- * 2. Vue 的 use 方法
- * 3. Vue Router 的原理
- */
-
  class VueRouter {
-
   constructor(options = {
     mode:'hash',
     routes:[]
@@ -27,7 +20,7 @@ import RouterHistory from "./router-history";
     if(this.mode === 'hash'){
       window.addEventListener('load',() => {
         // 初始化浏览器的 Hash
-        // 初始页面为 #/s
+        // 初始页面为 #/
         !location.hash && ( location.hash = '/' );
         this.handleHashPath()
       })
@@ -93,8 +86,7 @@ function injectRoutes(Vue){
       if(this.$options && this.$options.router){
         this._root = this;
         this._router = this.$options.router
-        // beforeCreate 方法先于 onload 事件执行
-        // 因此在时间执行之前，history.current 始终为 null
+        // 深度监听 history 对象，属性改变后重新渲染视图
         Vue.util.defineReactive(this,'_history',this._router.history)
       }else{
         // 其他组件

@@ -25,7 +25,7 @@
       })
     })
 
-    // 当活动历史记录条目更改时，将触发popstate事件
+    // 监听浏览器的前进后退事件
     window.addEventListener('popstate',() => {
       renderRoutes()
     })
