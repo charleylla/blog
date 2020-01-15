@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const a = {}
+    let testValue;
+    Object.defineProperty(a,'test',{
+      configurable:true,
+      // 是否可以被枚举
+      enumerable:true,
+      get(){
+        return testValue
+      },
+      set(newValue){
+        testValue = newValue;
+      }
+    })  
+    console.log(a.test)
+    a.test = 'test'
+    console.log(a.test)
+    console.log(testValue)
+  </script>
+</body>
+</html>
