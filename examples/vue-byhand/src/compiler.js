@@ -21,18 +21,14 @@ function replace(nodes, vm) {
   [...nodes.childNodes].forEach(node => {
     // 文本节点s
     if (document.TEXT_NODE == node.nodeType) {
-      let reg = /\{\{(.*)\}\}/
-      let textValue = vm;
+      const reg = /\{\{(.*)\}\}/
       let textContent = node.textContent
       if (reg.test(textContent)) {
         // 匹配第一个分组
         const match = RegExp.$1
         // userInfo.name -> [ userInfo,name ]
         const attrs = match.split('.')
-        let textValue = vm;
-        attrs.forEach((attr) => {
-          textValue = textValue[attr]
-        })
+        const textValue = getTextValue(attrs,vm)
         node.textContent = textContent.replace(reg, textValue);
         new Watcher(vm, attrs,(newValue) => {
           // 这里使用 textContent 进行替换

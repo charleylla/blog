@@ -4,20 +4,11 @@ function Watcher(vm,matchAttrs,fire){
   this.fire = fire;
   // 将 Dep.target 设置为 Watcher 的实例
   Dep.target = this;
-  this.getTextValue();
+  getTextValue(this.matchAttrs,this.$vm);
   Dep.target = null;
 }
 
 Watcher.prototype.update = function(){
-  const newValue = this.getTextValue()
+  const newValue = getTextValue(this.matchAttrs,this.$vm)
   this.fire(newValue)
-}
-
-Watcher.prototype.getTextValue = function(){
-  let val = this.$vm;
-  // 手动获取 data，触发 getter，然后订阅事件
-  this.matchAttrs.forEach((attr) => {
-    val = val[attr]
-  })
-  return val
 }

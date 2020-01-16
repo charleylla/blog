@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="./src/compiler.js"></script>
   <script src="./src/watcher.js"></script>
   <script src="./src/dep.js"></script>
   <script src="./src/observe.js"></script>
+  <script src="./src/compiler.js"></script>
   <script src="./src/mvvm.js"></script>
 </head>
 <body>
@@ -18,15 +18,6 @@
       <span>name:{{userInfo.name}}</span>
       -
       <span>age:{{userInfo.age}}</span>
-    </p>
-    <p>
-      <input type="text" v-model="userInfo.age"/>
-    </p>
-    <p>
-      {{sayName}}
-    </p>
-    <p>
-      {{saAge}}
     </p>
   </div>
 </body>
@@ -40,16 +31,6 @@
         age:10
       }
     },
-    computed:{
-      sayName(){
-        return 'My name is ' + this.userInfo.name
-      },
-      saAge:{
-        get(){
-          return 'My age is ' + this.userInfo.age
-        }
-      }
-    }
   })
 </script>
 </html>
