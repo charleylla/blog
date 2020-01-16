@@ -13,20 +13,11 @@
 </head>
 <body>
   <div id="app">
-    <h2>{{greeting}}</h2>
-    <p>
-      <span>name:{{userInfo.name}}</span>
-      -
-      <span>age:{{userInfo.age}}</span>
-    </p>
-    <p>
-      <input type="text" v-model="userInfo.age"/>
-    </p>
     <p>
       {{sayName}}
     </p>
     <p>
-      {{saAge}}
+      {{sayAge}}
     </p>
   </div>
 </body>
@@ -44,7 +35,7 @@
       sayName(){
         return 'My name is ' + this.userInfo.name
       },
-      saAge:{
+      sayAge:{
         get(){
           return 'My age is ' + this.userInfo.age
         }
